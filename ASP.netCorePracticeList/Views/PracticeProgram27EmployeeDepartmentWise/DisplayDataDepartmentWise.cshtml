@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<form method="post">
+    <div class="form-group">
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="control-label">Choose the department:</label>
+            </div>
+            <div class="col-8">
+                @Html.DropDownList("DepartmentName", null, htmlAttributes: new { @class = "form-control", @id = "departmentValue" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="DivDisplayDataDepartmentWise">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    <script>
+        $("#departmentValue").on('change', function () {
+            var result = $(this).val();
+            jQuery.ajax({
+                type: 'GET',
+                url: '/PracticeProgram27EmployeeDepartmentWise/GetDataDepartmentWise',
+                data: { departmentName: result },
+                success: function (data) {
+                    $("#DivDisplayDataDepartmentWise").html(data);
+                }
+            });
+        });
+    </script>
+}
+

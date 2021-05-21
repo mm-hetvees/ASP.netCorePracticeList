@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ASP.netCorePracticeList.Database.Model.MobileDetails>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p class="float-right">
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="FilterData" class="btn btn-secondary">Filter</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelImage)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelPrice)
+            </td>
+            <td>
+                <img src="~/Images/@item.ModelImage" height="100" width="100"/>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

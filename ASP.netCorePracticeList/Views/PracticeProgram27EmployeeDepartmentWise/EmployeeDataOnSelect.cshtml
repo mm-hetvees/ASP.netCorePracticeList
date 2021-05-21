@@ -1,0 +1,89 @@
+﻿@*@model IEnumerable<ASP.netCorePracticeList.Database.Model.EmployeeDepartmentTableDetails>*@
+@model IPagedList<ASP.netCorePracticeList.Database.Model.EmployeeDepartmentTableDetails>
+@{
+    ViewData["Title"] = "EmployeeDataOnSelect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+<h1>Employee Data On Select</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Commision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DepartmentName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="javascript:void(0);" onclick="dataDisplay('@item.Id');">Select</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(Convert.ToString(item.HireDate)))
+                    {
+                        @Convert.ToDateTime(item.HireDate).ToString("dd-MM-yyyy")
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Commision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, id => Url.Action("EmployeeDataOnSelect", "PracticeProgram27EmployeeDepartmentWise", new { id }))
+<div class="row">
+    <div class="col-12">
+        <div id="DivDisplayData">
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function dataDisplay(item) {
+            jQuery.ajax({
+                type: 'GET',
+                url: '/PracticeProgram27EmployeeDepartmentWise/GetData',
+                data: { id: item },
+                success: function (data) {
+                    debugger;
+                    $("#DivDisplayData").html(data);
+                }
+            });
+        }
+    </script>
+}

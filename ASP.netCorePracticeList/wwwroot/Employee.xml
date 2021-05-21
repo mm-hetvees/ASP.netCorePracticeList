@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Employees>
+  <Employee>
+    <EmployeeId>1</EmployeeId>
+    <EmployeeName>Hetvee</EmployeeName>
+    <EmployeeSalary>5000000</EmployeeSalary>
+  </Employee>
+  <Employee>
+    <EmployeeId>2</EmployeeId>
+    <EmployeeName>Kinjal</EmployeeName>
+    <EmployeeSalary>350000</EmployeeSalary>
+  </Employee>
+  <Employee>
+    <EmployeeId>3</EmployeeId>
+    <EmployeeName>Zeel</EmployeeName>
+    <EmployeeSalary>250000</EmployeeSalary>
+  </Employee>
+</Employees>
+

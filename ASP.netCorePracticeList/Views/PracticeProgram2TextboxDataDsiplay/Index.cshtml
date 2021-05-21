@@ -1,0 +1,31 @@
+﻿@model ASP.netCorePracticeList.Models.TextBoxDataDisplay
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    @Html.Label("Enter Your Text:")
+                    @Html.TextBoxFor(model => model.name, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px;">
+                <div class="col">
+                    <input class="btn btn-secondary align-center" type="submit" id="submitId" value="submit" />
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px;">
+                <div class="col">
+                    <label>@ViewBag.data</label>
+                </div>
+            </div>
+        </div>
+    </div>
+}

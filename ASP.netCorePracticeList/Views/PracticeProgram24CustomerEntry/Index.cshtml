@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ASP.netCorePracticeList.Database.Model.CustomerEntryTable>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customers List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customeraddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCountry)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customeraddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCountry)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

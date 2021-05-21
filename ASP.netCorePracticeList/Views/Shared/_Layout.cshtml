@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASP.netCorePracticeList</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Practical List</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Programs
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram1HelloWorld" asp-action="Index">Program1 Hello World</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram2TextboxDataDsiplay" asp-action="Index">Program2 Textbox Data Display</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram3ArithmeticOperation" asp-action="Index">Program3 Arithmetic Operation</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram4NumericOperation" asp-action="Index">Program4 Numeric Operation</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram5StringOperation" asp-action="Index">Program5 String Operation</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram6ImageDisplay" asp-action="Index">Program6 Image Display</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram7Monthdemo" asp-action="Index">Program7 Month Demo</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram8RegisterationForm" asp-action="Index">Program8 Registeration</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram9GreetingCard" asp-action="Index">Program9 Greeting Card</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PractceProgram10Marksheet" asp-action="Index">Program10 Marksheet</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram11RequiredFieldValidation" asp-action="Index">Program11 Required Field Validation</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram12RangeValidator" asp-action="Index">Program12 Range Validator</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram13CompareValidator" asp-action="Index">Program13 Compare Validator</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram14RegexValidator" asp-action="Index">Program14 Regex Validator</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram15StringLengthValidator" asp-action="Index">Program15 String Length Validator</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram16RegisterationWithValidation" asp-action="Index">Program16 Registeration With Validation</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram17FileUpload" asp-action="Index">Program17 File Upload</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram18DateTimePicker" asp-action="Index">Program18 DateTime Picker</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram19PassDataToSecondPage" asp-action="Index">Program19 Pass Data To Second Page</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram20AdRotator" asp-action="Index">Program20 XML Data</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram21MasterPage" asp-action="Index">Program21 Master Page</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram22Login" asp-action="Index">Program22 Login</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram23SignUp" asp-action="Index">Program23 SignUp</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram24CustomerEntry" asp-action="Index">Program24 Customer Entry</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram25Employee" asp-action="Index">Program25 Employee</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram26Client" asp-action="Index">Program26 Client</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram27EmployeeDepartmentWise" asp-action="Index">Program27 Employee Department Wise</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram27EmployeeDepartmentWise" asp-action="EmployeeDataOnSelect">Program28 Employee Data On Select</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PracticeProgram29MobileDetails" asp-action="Index">Program29 Mobile Details</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - ASP.netCorePracticeList - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

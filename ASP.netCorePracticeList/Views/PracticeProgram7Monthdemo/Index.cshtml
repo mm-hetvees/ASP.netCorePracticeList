@@ -1,0 +1,33 @@
+﻿@model ASP.netCorePracticeList.Models.MonthData
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Month Data Display</h2>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-2">
+            @Html.Label("Enter Month Number:")
+        </div>
+        <div class="col-4">
+            @Html.TextBoxFor(model => model.monthNo, htmlAttributes: new { @class="form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            @Html.Label("Month Name:")
+        </div>
+        <div class="col-4">
+            @Html.DisplayFor(model => model.monthName)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="btn btn-primary" type="submit" value="submit" name="btnAction" />
+            <input class="btn btn-secondary" type="submit" value="reset" name="btnAction" id="btnReset" />
+        </div>
+    </div>
+}
+
