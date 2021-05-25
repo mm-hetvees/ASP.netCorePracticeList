@@ -12,46 +12,59 @@
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    @Html.RadioButton("RadioChoice", "blueHills", true)
+                    @Html.RadioButton("RadioChoice", "blueHills", true, htmlAttributes: new { @class = "RadioSelectionOfImage" })
                     @Html.Label("blueHills", null, htmlAttributes: new { @class = "ml-1" })
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    @Html.RadioButton("RadioChoice", "sunset")
+                    @Html.RadioButton("RadioChoice", "sunset", false, htmlAttributes: new { @class = "RadioSelectionOfImage" })
                     @Html.Label("sunset", null, htmlAttributes: new { @class = "ml-1" })
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    @Html.RadioButton("RadioChoice", "waterLilis")
+                    @Html.RadioButton("RadioChoice", "waterLilis", false, htmlAttributes: new { @class = "RadioSelectionOfImage" })
                     @Html.Label("waterLilis", null, htmlAttributes: new { @class = "ml-1" })
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    @Html.RadioButton("RadioChoice", "winter")
+                    @Html.RadioButton("RadioChoice", "winter", false, htmlAttributes: new { @class = "RadioSelectionOfImage" })
                     @Html.Label("winter", null, htmlAttributes: new { @class = "ml-1" })
                 </div>
             </div>
         </div>
         <div class="col-6">
             <div style="height:200px;width:200px;">
-                @if (ViewBag.result != null)
-                {
-                    <img src="@Url.Content(@ViewBag.result)" style="height:100%;width:100%;object-fit:contain;" />
-                }
-                else
-                {
-                    <img src="~/Images/bluehills.jpg" style="height:100%;width:100%;object-fit:contain;" />
-                }
+                @*@if (ViewBag.result != null)
+                    {
+                        <img src="@Url.Content(@ViewBag.result)" style="height:100%;width:100%;object-fit:contain;" />
+                    }
+                    else
+                    {*@
+                <img src="~/Images/bluehills.jpg" id="imgDisplay" style="height:100%;width:100%;object-fit:contain;" />
+                @*}*@
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="submit" class="btn btn-primary" value="Submit" />
         </div>
     </div>
 }
 
+@section scripts{
+    <script>
+        $(".RadioSelectionOfImage").change(function () {
+            if ($(this).val() == "blueHills") {
+                $("#imgDisplay").attr("src", "/Images/bluehills.jpg")
+            }
+            if ($(this).val() == "sunset") {
+                $("#imgDisplay").attr("src", "/Images/sunset.jpg")
+            }
+            if ($(this).val() == "waterLilis") {
+                $("#imgDisplay").attr("src", "/Images/waterlilis.jpg")
+            }
+            if ($(this).val() == "winter") {
+                $("#imgDisplay").attr("src", "/Images/winter.jpg")
+            }
+        })
+    </script>
+}

@@ -14,18 +14,25 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(RegisterationWithValidators model)
+        public ActionResult Index(RegisterationWithValidators model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                RegisterationWithValidators objResult = new RegisterationWithValidators();
-                objResult.FirstName = model.FirstName;
-                objResult.LastName = model.LastName;
-                objResult.age = model.age;
-                objResult.Password = model.Password;
-                objResult.ConfirmPassword = model.ConfirmPassword;
-                objResult.Email = model.Email;
-                ViewBag.result = objResult;
+                if (ModelState.IsValid)
+                {
+                    RegisterationWithValidators objResult = new RegisterationWithValidators();
+                    objResult.FirstName = model.FirstName;
+                    objResult.LastName = model.LastName;
+                    objResult.age = model.age;
+                    objResult.Password = model.Password;
+                    objResult.ConfirmPassword = model.ConfirmPassword;
+                    objResult.Email = model.Email;
+                    ViewBag.result = objResult;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

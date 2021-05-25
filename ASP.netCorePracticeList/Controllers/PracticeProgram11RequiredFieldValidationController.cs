@@ -14,14 +14,21 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(RequiredField model)
+        public IActionResult Index(RequiredField model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.FirstName = model.FirstName;
-                ViewBag.LastName = model.LastName;
+
+                if (ModelState.IsValid)
+                {
+                    ViewBag.FirstName = model.FirstName;
+                    ViewBag.LastName = model.LastName;
+                }
             }
-            return View();
+            if (btnAction == "Reset") {
+                ModelState.Clear();
+            }
+                return View();
         }
     }
 }

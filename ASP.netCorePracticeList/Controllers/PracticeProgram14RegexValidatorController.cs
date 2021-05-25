@@ -14,11 +14,18 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(RegexValidator model)
+        public IActionResult Index(RegexValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Email = "Entered Email Is : " + model.Email;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Email = "Entered Email Is : " + model.Email;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

@@ -72,7 +72,7 @@ namespace ASP.netCorePracticeList.Controllers
         // POST: PracticeProgram25EmployeeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind("Id,Name,DateOfBirth,Address,ContactNumber,City,Country")] EmployeeTableDetails data)
+        public ActionResult Create(EmployeeTableDetails data)
         {
             try
             {

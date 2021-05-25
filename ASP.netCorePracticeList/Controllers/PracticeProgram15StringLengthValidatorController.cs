@@ -14,11 +14,18 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(StringLengthValidator model)
+        public IActionResult Index(StringLengthValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.comment = model.comment;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.comment = model.comment;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

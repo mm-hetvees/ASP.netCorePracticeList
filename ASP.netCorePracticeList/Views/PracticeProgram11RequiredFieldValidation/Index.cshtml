@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Required Field Valodation</h2>
+<h2>Required Field Validation</h2>
 @using (Html.BeginForm())
 {
     <div class="table-bordered" style="width:500px;padding:10px;">
@@ -28,7 +28,8 @@
         </div>
         <div class="row mt-2">
             <div class="col-md-12 text-center">
-                <input type="submit" value="Submit" class="btn btn-primary" />
+                <input type="submit" value="Submit" class="btn btn-primary" name="btnAction"/>
+                <input type="submit" value="Reset" class="btn btn-secondary" name="btnAction"/>
             </div>
         </div>
         @if (@ViewBag.FirstName != null && @ViewBag.LastName != null)

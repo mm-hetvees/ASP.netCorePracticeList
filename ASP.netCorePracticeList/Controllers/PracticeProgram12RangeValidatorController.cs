@@ -14,11 +14,18 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(RangeValidator model)
+        public ActionResult Index(RangeValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Age = model.age;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Age = model.age;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

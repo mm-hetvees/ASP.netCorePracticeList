@@ -14,12 +14,19 @@ namespace ASP.netCorePracticeList.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(CompareValidator model)
+        public IActionResult Index(CompareValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Password = model.Password;
-                ViewBag.ConfirmPassword = model.RetypePassword;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Password = model.Password;
+                    ViewBag.ConfirmPassword = model.RetypePassword;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }
